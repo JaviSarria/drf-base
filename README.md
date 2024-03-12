@@ -9,7 +9,7 @@ Configuration settings:
 5) entity example with models and viewset and permission and authentication with token
 
 
-Steps:
+Instalation and First Configuration Steps:
 1) Create virtual env in root folder:
     python -m venv .venv
 2) Open virtuan env:
@@ -31,3 +31,13 @@ Steps:
     python3 manage.py migrate
 7) Enjoy:
     python3 manage.py runsherver
+
+Test Steps:
+1) Create mock data from database:
+1.1) User mock data:
+    python manage.py dumpdata --format=json auth.user > fixtures/user.json
+1.2) Entity mock data:
+    python manage.py dumpdata --format=json api.entity > fixtures/entity.json
+2) Create tests for CRUD with every Model
+3) Execute tests
+    python manage.py test  
